@@ -7,10 +7,13 @@ GO
 CREATE DATABASE db_biblioteca;
 GO
 
+USE db_biblioteca;
+GO
+	
 IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'tbl_autor' AND TABLE_SCHEMA = 'dbo')
    DROP TABLE [dbo].[tbl_autor];
 GO
-
+	
 CREATE TABLE [dbo].[tbl_autor] (
 	id_autor SMALLINT PRIMARY KEY IDENTITY(1, 1),
 	nome_autor VARCHAR(30) NOT NULL UNIQUE,
@@ -42,7 +45,7 @@ GO
 INSERT INTO tbl_livros (nome_livro, saga_livro, id_autor, editora_livro, valor_livro)
 	VALUES	('Um estudo em vermelho', 'Sherlock Holmes', 1, 'ftd', 10.50),
 			('O signo dos quatro', 'Sherlock Holmes', 1, 'atica', 10.50),
-			('O c„o dos Baskervilles', 'Sherlock Holmes', 1, 'ftd', 7.00),
+			('O c√£o dos Baskervilles', 'Sherlock Holmes', 1, 'ftd', 7.00),
 			('Assassinato no Expresso do Oriente', 'Agatha Christie', 2, 'HarperCollins', 29.86),
 			('Morte no Nilo', 'Agatha Christie', 2, 'HarperCollins', 26.86);
 GO
